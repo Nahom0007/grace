@@ -29,9 +29,28 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Poppins', sans-serif; background: var(--bg-light); color: var(--text); min-height: 100vh; }
 h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+@keyframes premiumFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* === LAYOUT === */
-#app { display: flex; height: 100vh; overflow: hidden; }
+#app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: premiumFadeUp 0.8s ease-out forwards;
+}
 #sidebar {
   width: 260px; background: var(--bg); border-right: 1px solid #f0e8eb;
   display: flex; flex-direction: column; transition: transform .3s; z-index: 100;
